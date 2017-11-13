@@ -1,10 +1,11 @@
 /*
-  ./client/components/App.js
+  ./static/components/App.js
 */
 
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import HomePage from '../containers/HomePage';
+import HomePage from '../pages/HomePage';
+import CardPage from '../pages/CardPage';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 export default class App extends Component {
@@ -13,10 +14,13 @@ export default class App extends Component {
       <Router>
         <Switch>
           <div>
-            <Route exact path = "/" component = {HomePage}></Route>
+            <Route exact path = '/' component = {HomePage}></Route>
+            <Route exact path = '/cardPage' component = {CardPage}></Route>
       	  </div>
         </Switch>
       </Router>
     );
   }
 }
+
+ReactDOM.render(<App/>, document.getElementById('reactEntry'));

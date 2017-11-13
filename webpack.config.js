@@ -5,16 +5,20 @@ const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
-  template: './client/index.html',
+  template: './templates/index.html',
   filename: 'index.html',
   inject: 'body'
 })
 
 module.exports = {
-  entry: './client/index.js',
+  entry:
+  [
+    './static/components/App.js'
+  ],
   output: {
-    path: path.resolve('dist'),
-    filename: 'index_bundle.js'
+    path: __dirname + '/',
+    filename: 'bundle.js',
+    publicPath: '/'
   },
   module: {
     loaders: [
@@ -39,6 +43,9 @@ module.exports = {
         loader: 'url-loader?limit=30000&name=[name]-[hash].[ext]'
       }
     ]
+  },
+  devServer: {
+    historyApiFallback: true,
   },
   plugins: [HtmlWebpackPluginConfig]
 }

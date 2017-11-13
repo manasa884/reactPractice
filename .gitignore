@@ -22,3 +22,4 @@
 # Packages #
 ############
 node_modules/
+venv/
