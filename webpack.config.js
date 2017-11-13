@@ -16,7 +16,7 @@ module.exports = {
     './static/components/App.js'
   ],
   output: {
-    path: __dirname + '/',
+    path: __dirname + '/static',
     filename: 'bundle.js',
     publicPath: '/'
   },
@@ -26,13 +26,14 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel-loader',
         query: {
-          presets: ['es2015', 'react']
+          presets: ['es2015', 'react'],
+          compact: true
         },
-        exclude: /node_modules/
+        exclude: [/node_modules/, /venv/]
       },
       {
         test: /\.jsx$/,
-        loader: 'babel-loader', exclude: /node_modules/
+        loader: 'babel-loader', exclude: [/node_modules/, /venv/]
       },
       {
         test: /\.css$/,
