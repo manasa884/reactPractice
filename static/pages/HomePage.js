@@ -24,7 +24,7 @@ export default class HomePage extends React.Component {
           <RaisedButton label="Test Card" primary={true} containerElement={<Link to='/cardPage'/>}/>
           <br/>
           <br/>
-          <RaisedButton label="Test Grid"/>
+          <RaisedButton label="Test Grid" containerElement={<Link to='/gridPage'/>}/>
         </div>
       </MuiThemeProvider>
     );

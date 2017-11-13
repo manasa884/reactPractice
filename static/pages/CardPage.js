@@ -8,6 +8,7 @@ export default class CardPage extends React.Component {
   render() {
     return(
       <div align="center">
+      <h1> Card Page </h1>
       <MuiThemeProvider>
         <Card style={{maxWidth:345}}>
           <Card.Header title="Card Title"/>
